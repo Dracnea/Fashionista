@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../db/user.schema');
+const User = require('../models/user.schema');
 
 router.post("/login", async(req, res) => {
     const data = req.body;
@@ -9,7 +9,6 @@ router.post("/login", async(req, res) => {
     }
     //implement JSON web token here, Phase 3 Section 2 Lesson 4
     res.status(200).json(user);
-
 })
 
 module.exports = router;

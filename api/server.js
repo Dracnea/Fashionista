@@ -6,6 +6,7 @@ const userRoutes = require('./route/user.route');
 const productRoutes = require('./route/product.route');
 const cartRoutes = require('./route/cart.route');
 const wishlistRoutes = require('./route/wishlist.route');
+const authRoutes = require('./route/auth.route');
 
 var app = express();
 
@@ -17,6 +18,7 @@ app.use('/api', userRoutes);
 app.use('/api', productRoutes);
 app.use('/api', cartRoutes);
 app.use('/api', wishlistRoutes);
+app.use('/api', authRoutes);
 
 // Local port.
 const PORT = 8080;
