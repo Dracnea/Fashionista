@@ -18,3 +18,5 @@ The server can be run by opening a new terminal (Powershell) within VS Code or s
 From here move to the ```Fashionista``` project directory and then ```cd``` into ```api```.  
 The server can then be run using the command ```npm run dev```.  
 
+## Running The Angular UI:
+
