@@ -14,5 +14,7 @@ This should be done through the ```.env``` file which you will have to create in
 This file is ignored via ```.gitignore``` for security reasons.
 
 ## Running The Server:
-
+The server can be run by opening a new terminal (Powershell) within VS Code or simply on the OS.  
+From here move to the ```Fashionista``` project directory and then ```cd``` into ```api```.  
+The server can then be run using the command ```npm run dev```.  
 
