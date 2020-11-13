@@ -12,3 +12,7 @@ run ```npm i``` within ```/Fashionista```
 When you first download the project you will have to insert in your personal MongoDB connection string.  
 This should be done through the ```.env``` file which you will have to create in accordance with ```createEnv.md``` located under ```/api```.    
 This file is ignored via ```.gitignore``` for security reasons.
+
+## Running The Server:
+
+
