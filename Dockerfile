@@ -13,4 +13,4 @@ RUN     npm install -g @angular/cli &&\
         cd /usr/local/educative/angular &&\
         npm i
         
-EXPOSE 3000
+EXPOSE 4200
