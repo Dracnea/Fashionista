@@ -19,4 +19,7 @@ From here move to the ```Fashionista``` project directory and then ```cd``` into
 The server can then be run using the command ```npm run dev```.  
 
 ## Running The Angular UI:
+The Angular can be run by opening a new terminal (Powershell) within VS Code or simply on the OS.  
+From here move to the ```Fashionista``` project directory and then ```cd``` into ```Angular```.  
+The Angular can then be run using the command ```npm start```.  
 
