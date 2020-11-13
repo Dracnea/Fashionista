@@ -6,8 +6,7 @@ LABEL maintainer="dracnea@dracnea.io"
 COPY angular /usr/local/educative/angular
 # Installing Angular cli and node modules in angular directory
 RUN     npm install -g @angular/cli &&\
-        # npm i for both sever and Angular
-        # Set up the .env and prompt user
+        # npm i for both server and Angular
         # Start server
         # Start angular
         # May need to change based on system
