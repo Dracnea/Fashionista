@@ -17,10 +17,12 @@ export class ProductCreateComponent implements OnInit {
   constructor(private readonly fb: FormBuilder, private auth: AuthService, private router: Router, private ps: ProductService) {
     this.form = this.fb.group({
       name: ['', [Validators.required]],
-      brand: ['', [Validators.required]]
+      brand: ['', [Validators.required]],
+      price: ['', [Validators.required]],
+      quantity: ['', [Validators.required]]
     });
   }
-  
+
   ngOnInit(): void {
   }
 
