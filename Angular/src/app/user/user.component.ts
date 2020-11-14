@@ -11,17 +11,17 @@ export class UserComponent implements OnInit {
   @Input() userId = '';
   @Input() userEmail = '';
   @Input() userType = '';
-
   @Input() loggedInUserType = '';
 
   constructor(private us: UsersService) {
+
   }
 
   ngOnInit(): void {
+
   }
 
   editUser(): boolean | void {
-    // TODO
     this.unimplemented(false);
   }
 
@@ -36,5 +36,4 @@ export class UserComponent implements OnInit {
       throw new Error('unimplemented');
     }
   }
-
 }

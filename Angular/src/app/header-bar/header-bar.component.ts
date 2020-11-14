@@ -44,14 +44,11 @@ export class HeaderBarComponent implements OnInit {
   }
 
   purchase(): void {
-    // console.log('purchasing...');
-    // tslint:disable-next-line:variable-name
     this.us.getCart(this.auth.user._id).then(_cart => {
       if (_cart.length) {
         this.us.putUser(this.auth.user._id, {cart: []}).then(() => this.us.getCart(this.auth.user._id));
         return _cart;
       }
-      // tslint:disable-next-line:variable-name max-line-length
     }).then(_cart => alert(`Successfully purchased ${_cart.length} unique item${_cart.length === 1 ? '' : 's'} in cart!`)).catch(() => alert('No items in cart!'));
 
   }
@@ -73,7 +70,8 @@ export class HeaderBarComponent implements OnInit {
   routeToRegistration(): void {
     this.router.navigate(['/register', {trigger: this.parent.toUpperCase()}]);
   }
-
+  
+  //Double check if this is required
   unimplemented(direct: boolean = true): void {
     if (direct) {
       throw new Error('function not specified');

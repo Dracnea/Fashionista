@@ -7,15 +7,15 @@ import {BehaviorSubject} from 'rxjs';
 })
 export class ProductsService {
 
-  constructor(private httpClient: HttpClient) {
-    this.products = new BehaviorSubject<Array<any>>([]);
-  }
-
   private productsApi = '/api/products';
 
   products;
   product;
 
+  constructor(private httpClient: HttpClient) {
+    this.products = new BehaviorSubject<Array<any>>([]);
+  }
+  
   // Error handling
   private static error(error: any): void {
     const message = (error.message) ? error.message :
@@ -24,13 +24,8 @@ export class ProductsService {
   }
 
   get(): Promise<Array<any>> {
-    // const nextProducts = [];
     // @ts-ignore
     // tslint:disable-next-line:max-line-length
-    // this.httpClient.get(this.productsApi).toPromise().then(prods => prods.forEach(prod => nextProducts.push(prod))).catch(ProductsService.error);
-
-    // this.products.next(nextProducts);
-
     return this.httpClient.get(this.productsApi).toPromise().then(prods => {
       this.products.next(prods);
       return prods;

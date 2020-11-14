@@ -20,9 +20,6 @@ export class ProductListComponent implements OnInit {
     if (this.displayType === 'all' && !this.products.length) {
       this.getProducts();
     }
-    // if (!this.userType) {
-    //   this.userType = this.auth.user.type || '';
-    // }
   }
 
   getProducts(): void {
