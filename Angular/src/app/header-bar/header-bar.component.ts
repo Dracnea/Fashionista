@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from '../services/auth.service';
-import {UsersService} from '../services/users.service';
+import {UserService} from '../services/user/users.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class HeaderBarComponent implements OnInit {
 
-  constructor(private auth: AuthService, private us: UsersService, private router: Router) {
+  constructor(private auth: AuthService, private us: UserService, private router: Router) {
     this.us.user.subscribe(({firstName, lastName, type}) => {
       this.userName = `${firstName} ${lastName}`;
       this.userType = type;
@@ -70,7 +70,7 @@ export class HeaderBarComponent implements OnInit {
   routeToRegistration(): void {
     this.router.navigate(['/register', {trigger: this.parent.toUpperCase()}]);
   }
-  
+
   //Double check if this is required
   unimplemented(direct: boolean = true): void {
     if (direct) {

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../services/auth.service';
 import {Router} from '@angular/router';
-import {UsersService} from '../services/users.service';
+import {UserService} from '../services/user/users.service';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   loggedInUserType;
   title = 'register-user';
 
-  constructor(private readonly fb: FormBuilder, private auth: AuthService, private router: Router, private us: UsersService) {
+  constructor(private readonly fb: FormBuilder, private auth: AuthService, private router: Router, private us: UserService) {
     this.form = this.fb.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(4)]]

@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ProductsService} from '../services/products.service';
+import {ProductService} from '../services/product/product.service';
 import {AuthService} from '../services/auth.service';
-import {UsersService} from '../services/users.service';
+import {UserService} from '../services/user/users.service';
 
 @Component({
   selector: 'app-product',
@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
     user: ['user-portal'],
   };
 
-  constructor(private auth: AuthService, private ps: ProductsService, private us: UsersService) { }
+  constructor(private auth: AuthService, private ps: ProductService, private us: UserService) { }
 
   ngOnInit(): void {
     if (this.productId && (!this.productName || !this.productBrand)) {

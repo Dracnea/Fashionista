@@ -5,7 +5,7 @@ import {BehaviorSubject} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
+export class ProductService {
 
   private productsApi = '/api/products';
 
@@ -29,12 +29,12 @@ export class ProductsService {
     return this.httpClient.get(this.productsApi).toPromise().then(prods => {
       this.products.next(prods);
       return prods;
-    }).catch(ProductsService.error);
+    }).catch(ProductService.error);
   }
 
   getById(id): Promise<any> {
     this.product = {_id: '', name: '', brand: ''};
-    return this.httpClient.get(`${this.productsApi}/${id}`).toPromise().then(prod => prod).catch(ProductsService.error);
+    return this.httpClient.get(`${this.productsApi}/${id}`).toPromise().then(prod => prod).catch(ProductService.error);
   }
 
   postProduct(newProduct): Promise<any> {
@@ -42,7 +42,7 @@ export class ProductsService {
       this.product = prod;
       this.get();
       return prod;
-    }).catch(ProductsService.error);
+    }).catch(ProductService.error);
   }
 
   putProduct(id, updatedProduct): Promise<any> {
@@ -50,13 +50,13 @@ export class ProductsService {
       this.product = prod;
       this.get();
       return prod;
-    }).catch(ProductsService.error);
+    }).catch(ProductService.error);
   }
 
   deleteProduct(id): Promise<any> {
     return this.httpClient.delete(`${this.productsApi}/${id}`).toPromise().then(prodId => {
       this.get();
       return prodId;
-    }).catch(ProductsService.error);
+    }).catch(ProductService.error);
   }
 }

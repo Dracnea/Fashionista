@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
-import {ProductsService} from '../services/products.service';
-import {UsersService} from '../services/users.service';
+import {ProductService} from '../services/product/product.service';
+import { UserService } from '../services/user/users.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -19,7 +19,7 @@ export class UserPortalComponent implements OnInit {
   wishList = [];
 
 
-  constructor(private auth: AuthService, private ps: ProductsService, private us: UsersService, private router: Router) {
+  constructor(private auth: AuthService, private ps: ProductService, private us: UserService, private router: Router) {
     this.us.user.subscribe(user => {
       this.userType = user.type;
     });

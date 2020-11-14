@@ -1,12 +1,11 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
-import {ProductsService} from './products.service';
+import {BehaviorSubject, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class UserService {
 
   private usersApi = '/api/users';
   private cartsApi = '/api/carts';
@@ -42,7 +41,7 @@ export class UsersService {
     return this.httpClient.get(this.usersApi).toPromise().then(_users => {
       this.users.next(_users);
       return _users;
-    }).catch(UsersService.error);
+    }).catch(UserService.error);
   }
 
   getUserById(id): Promise<any> {
@@ -56,7 +55,7 @@ export class UsersService {
       this.user.next(_user);
       console.log(_user);
       return _user;
-    }).catch(UsersService.error);
+    }).catch(UserService.error);
   }
 
   postUser(user): Promise<any> {
@@ -64,7 +63,7 @@ export class UsersService {
     return this.httpClient.post(`${this.usersApi}`, user).toPromise().then(_user => {
       this.getUsers();
       return _user;
-    }).catch(UsersService.error);
+    }).catch(UserService.error);
   }
 
   putUser(id, user): Promise<any> {
@@ -72,7 +71,7 @@ export class UsersService {
     return this.httpClient.put(`${this.usersApi}/${id}`, user).toPromise().then(_user => {
       this.getUsers();
       return _user;
-    }).catch(UsersService.error);
+    }).catch(UserService.error);
   }
 
   deleteUser(id): Promise<any> {
@@ -80,7 +79,7 @@ export class UsersService {
     return this.httpClient.delete(`${this.usersApi}/${id}`).toPromise().then(_user => {
       this.getUsers();
       return _user;
-    }).catch(UsersService.error);
+    }).catch(UserService.error);
   }
 
   getCart(id): Promise<Array<any>> {
@@ -88,7 +87,7 @@ export class UsersService {
     return this.httpClient.get(`${this.usersApi}/${id}`).toPromise().then((_user: any) => {
       this.cart.next(_user.cart);
       return _user.cart;
-    }).catch(UsersService.error);
+    }).catch(UserService.error);
   }
 
   postCart(userId, productId): Promise<Array<any>> {
@@ -111,7 +110,7 @@ export class UsersService {
     return this.httpClient.delete(`${this.cartsApi}/${userId}/${productId}`).toPromise().then(_cart => {
       this.cart.next(_cart);
       return _cart;
-    }).catch(UsersService.error);
+    }).catch(UserService.error);
   }
 
   getWishlist(id): Promise<Array<any>> {
@@ -119,7 +118,7 @@ export class UsersService {
     return this.httpClient.get(`${this.usersApi}/${id}`).toPromise().then((_user: any) => {
       this.wishlist.next(_user.wishlist);
       return _user.wishlist;
-    }).catch(UsersService.error);
+    }).catch(UserService.error);
   }
 
   postWishlist(userId, productId): void {
@@ -128,7 +127,7 @@ export class UsersService {
     return this.httpClient.post(`${this.wishlistsApi}/${userId}/${productId}`).toPromise().then(_wishlist => {
       this.wishlist.next(_wishlist);
       return _wishlist;
-    }).catch(UsersService.error);
+    }).catch(UserService.error);
   }
 
   deleteWishlist(userId, productId): void {
@@ -138,7 +137,7 @@ export class UsersService {
     return this.httpClient.delete(`${this.wishlistsApi}/${userId}/${productId}`).toPromise().then(_wishlist => {
       this.wishlist.next(_wishlist);
       return _wishlist;
-    }).catch(UsersService.error);
+    }).catch(UserService.error);
   }
 
   unimplemented(direct: boolean = true): void {

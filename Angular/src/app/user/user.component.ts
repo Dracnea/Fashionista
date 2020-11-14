@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UsersService} from '../services/users.service';
+import {UserService} from '../services/user/users.service';
 
 @Component({
   selector: 'app-user',
@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   @Input() userType = '';
   @Input() loggedInUserType = '';
 
-  constructor(private us: UsersService) {
+  constructor(private us: UserService) {
 
   }
 
