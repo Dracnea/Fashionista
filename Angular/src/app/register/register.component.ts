@@ -5,11 +5,11 @@ import {Router} from '@angular/router';
 import {UsersService} from '../services/users.service';
 
 @Component({
-  selector: 'app-register-user',
-  templateUrl: './register-user.component.html',
-  styleUrls: ['./register-user.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class RegisterUserComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   form: FormGroup;
   failedRegistration;
